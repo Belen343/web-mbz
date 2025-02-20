@@ -1324,6 +1324,9 @@ footer .redes{
         font-size: .75rem;
     }
 
+    .cabecera {
+        gap: 40px;
+    }
 
     .servicio-item {
         width: 100%;
