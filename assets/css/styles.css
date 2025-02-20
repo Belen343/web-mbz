@@ -1325,7 +1325,8 @@ footer .redes{
     }
 
     .cabecera {
-        gap: 40px;
+        margin: 10px 10px 5px 10px;
+        gap: 10px;
     }
 
     .servicio-item {
@@ -1364,10 +1365,25 @@ footer .redes{
         height: 185vh;
     }
 
+    .main-propiedades-content {
+        padding: 20px 10px;
+    }
+
+    .propiedades-items {
+        padding: 0 10px;
+    }
+
 
     .blog-card {
         min-width: 95%;
     }
+
+    .contacto-rect-secundario {
+        width: 280%;
+        height: 95%;
+        left: -290px;
+    }
+
 
 
     .container-banner {
