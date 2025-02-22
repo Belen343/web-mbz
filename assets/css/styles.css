@@ -40,6 +40,7 @@
 body {
     font-family: var(--fuente-texto);
     font-size: 1rem;
+    /* Arriba, Derecha, Abajo, Izquierda */
 }
 
 /* Header */
@@ -98,7 +99,9 @@ body {
 
 /* Funcionalidad del menu para páginas secuntarias */
 .secundario {
-    .activo, a:hover{
+
+    .activo,
+    a:hover {
         background-color: #4B6597;
         border-radius: 25px 25px 0 0;
         padding: 10px 15px;
@@ -107,12 +110,12 @@ body {
     }
 
     .cabecera-menuPrincipal .activo,
-    .cabecera-menuPrincipal a:hover{
+    .cabecera-menuPrincipal a:hover {
         top: 2px;
     }
 
     .cabecera-menuExtra .activo,
-    .cabecera-menuExtra a:hover{
+    .cabecera-menuExtra a:hover {
         top: 11px;
     }
 
@@ -127,6 +130,24 @@ body {
     }
 
 }
+
+/* BANNER SECUNDARIOS */
+.container-banner {
+    background-size: cover;
+    height: 75vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 30px 30px;
+
+    h1 {
+        font-family: var(--fuente-titulo);
+        font-size: 5rem;
+        color: white;
+        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
+    }
+}
+
 
 /* HOME VIDEO BANNER */
 .container-banner-home {
@@ -320,7 +341,7 @@ body {
         font-size: 1rem;
         margin-top: 10px;
     }
-    
+
 }
 
 .item-detalles ul li {
@@ -355,6 +376,7 @@ body {
         font-weight: bold;
         width: 20%;
     }
+
     button:hover {
         background-color: var(--tertiary-color);
     }
@@ -465,7 +487,7 @@ body {
     button:hover {
         background-color: var(--tertiary-color);
     }
-    
+
 }
 
 .main-blog-slider {
@@ -599,7 +621,8 @@ body {
         margin-bottom: 20px;
     }
 
-    input, textarea {
+    input,
+    textarea {
         width: 95%;
         padding: 10px;
         border: none;
@@ -608,7 +631,8 @@ body {
         background: transparent;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
         border-bottom: 2px solid var(--primary-color);
     }
 
@@ -637,6 +661,242 @@ body {
 }
 
 
+/* NOSOTROS - BANNER */
+.banner-nosotros {
+    background-image: url('../img/fondo-banner-nosotros.svg');
+    height: 60vh;
+    z-index: 1;
+}
+
+/* NOSOTROS - HISTORIA */
+.container-historia {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 0px;
+    width: 70%;
+    position: relative;
+    top: 45%;
+    transform: translateY(-45%);
+    z-index: 3;
+    margin: 0 auto;
+}
+
+.container-historia-texto {
+    flex: 1;
+    background-color: var(--secondary-color);
+
+    p {
+        color: var(--primary-color);
+        font-family: var(--fuente-menu);
+        line-height: 1.5;
+        padding: 100px 30px;
+
+    }
+
+}
+
+.container-histroia-img {
+    flex: 1;
+    background-image: url('../img/nosotros/historia.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* NOSOTROS - FILOSOFIA */
+.container-folosofia {
+    display: flex;
+    position: relative;
+    align-items: stretch;
+    width: 100%;
+    top: 45%;
+    transform: translateY(-45%);
+    z-index: 2;
+}
+
+.container-folosofia-imgdifuminada {
+    flex: 1;
+    background-image: url('../img/nosotros/filosofia.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-folosofia-imgdifuminada::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+.container-folosofia-texto {
+    flex: 1;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: end;
+    padding: 0 15% 0 5%;
+    max-width: 30%;
+
+    h2 {
+        font-family: var(--fuente-titulo);
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    p {
+        font-family: var(--fuente-texto);
+        line-height: 1.5;
+    }
+}
+
+.container-folosofia-img {
+    position: absolute;
+    top: 15%;
+    left: 14%;
+    transform: translate(-16%, -5%);
+    z-index: 2;
+}
+
+.container-folosofia-img img {
+    width: auto;
+    height: 420px;
+    object-fit: cover;
+}
+
+/* NOSOTROS - PORQUE ELEGIRNOS */
+.container-why {
+    background-color: var(--secondary-color);
+    width: calc(70% - 60px);
+    height: 100%;
+    margin: 0 auto;
+    padding: 80px 10px 30px 30px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -230px;
+}
+
+.why-columna-uno {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    h2 {
+        width: 100%;
+        font-family: var(--fuente-titulo);
+        font-size: 2rem;
+        color: var(--primary-color);
+    }
+
+    img {
+        height: 100%;
+        width: auto;
+    }
+
+    .columna-uno {
+        width: 80%;
+    }
+}
+
+.container-why-items {
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    color: var(--primary-color);
+    line-height: 1.5;
+
+    h3 {
+        font-family: var(--fuente-titulo);
+        font-size: 1.25rem;
+    }
+}
+
+.img-why-fondo {
+    height: 80%;
+    width: 50%;
+    position: absolute;
+    left: 80%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; 
+    filter: brightness(0.3) hue-rotate(200deg);
+}
+
+.why-columna-dos {
+    display: flex;
+    gap: 20px;
+    position: relative;
+    z-index: 2;
+    top: -12px;
+    right: 5px;
+
+    img {
+        height: 65%;
+        width: auto;
+    }
+
+    .columna-dos {
+        width: 80%;
+        padding-top: 120px;
+        color: white;
+        text-align: end;
+    }
+}
+
+/* NOSOTROS - LOGROS */
+.container-logros {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 50px;
+    align-items: center;
+    width: calc(70% - 20px);
+    margin: 0 auto;
+    position: relative;
+    top: -120px;
+}
+
+.logros-item{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-self: start;
+    text-align: center;
+    width: 30vh;
+
+    img {
+        width: 30vh;
+        height: 30vh;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    img:hover {
+        transform: scale(1.2); /* Aumenta un 20% su tamaño */
+    }
+
+    h3 {
+        margin-top: 10px;
+        font-family: var(--fuente-menu);
+        color: var(--primary-color);
+    }
+}
+
+/* CONTACTO / BLOG - BANNER */
+.banner-menuextra {
+    background-image: url('../img/fondo-banner-menuextra.svg');
+    border-radius: 15px;
+}
+
 /* BLOG - INTRO */
 .container-main-intro {
     margin: 100px 30px 0px 30px;
@@ -648,7 +908,7 @@ body {
     gap: 100px;
 }
 
-.container-main-intro p{
+.container-main-intro p {
     width: 65%;
     line-height: 1.2;
     font-weight: 500;
@@ -657,7 +917,7 @@ body {
 }
 
 /* BLOG - BLOGS */
-.container-main-blogs{
+.container-main-blogs {
     background-image: url('../img/fondo1-blog.svg');
     background-size: cover;
     padding: 200px 50px;
@@ -666,7 +926,7 @@ body {
     width: auto;
 }
 
-.content-main-blogs{
+.content-main-blogs {
     display: flex;
     gap: 20px;
     height: 100vh;
@@ -676,20 +936,25 @@ body {
 
 /* Personaliza el scrollbar de un div específico */
 .content-main-blogs::-webkit-scrollbar {
-    width: 5px; /* Grosor del scrollbar */
+    width: 5px;
+    /* Grosor del scrollbar */
 }
 
 .content-main-blogs::-webkit-scrollbar-thumb {
-    background-color: #B1C864; /* Color del "thumb" (parte que se mueve) */
-    border-radius: 10px; /* Bordes redondeados del thumb */
+    background-color: #B1C864;
+    /* Color del "thumb" (parte que se mueve) */
+    border-radius: 10px;
+    /* Bordes redondeados del thumb */
 }
 
 .content-main-blogs::-webkit-scrollbar-track {
-    background-color: var(--secondary-color); /* Color de fondo de la pista del scrollbar */
-    border-radius: 10px; /* Bordes redondeados de la pista */
+    background-color: var(--secondary-color);
+    /* Color de fondo de la pista del scrollbar */
+    border-radius: 10px;
+    /* Bordes redondeados de la pista */
 }
 
-.main-blogs-contenido{
+.main-blogs-contenido {
     display: flex;
     flex-wrap: wrap;
     padding: 15px;
@@ -700,7 +965,7 @@ body {
     }
 }
 
-.main-blogs-menu{
+.main-blogs-menu {
     min-width: calc(100% / 4 - 36px);
     height: 30vh;
     background-color: #EAEAEA;
@@ -709,7 +974,7 @@ body {
     margin: 15px;
     padding: 40px;
 
-    h3{
+    h3 {
         color: var(--primary-color);
         font-family: var(--fuente-titulo);
         font-size: 1.25rem;
@@ -720,13 +985,13 @@ body {
         margin: 12px 0;
     }
 
-    ul{
+    ul {
         list-style: none;
         padding: 0;
         margin: 0;
     }
 
-    li{
+    li {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -736,42 +1001,22 @@ body {
         color: var(--secondary-color);
     }
 
-    strong{
+    strong {
         font-size: 1.5rem;
         font-family: var(--fuente-titulo);
         font-weight: 900;
     }
 }
 
-
-
-/* CONTACTO - BANNER */
-.container-banner {
-    background-image: url('../img/fondo-banner.svg');
-    background-size: cover;
-    height: 75vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 30px 30px;
-    border-radius: 15px;
-
-    h1 {
-        font-family: var(--fuente-titulo);
-        font-size: 5rem;
-        color: white;
-        text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.5);
-    }
-}
-
 /* CONTACTO - MAIN */
-.container-main-pagecontacto{
+.container-main-pagecontacto {
     display: flex;
     flex-direction: column;
     gap: 100px;
     height: 100%;
     margin-bottom: 50px;
-    h2{
+
+    h2 {
         font-family: var(--fuente-titulo);
         font-style: bold;
         font-size: 2rem;
@@ -780,7 +1025,7 @@ body {
     }
 }
 
-.main-contacto-content{
+.main-contacto-content {
     padding: 10px 0;
     width: 100%;
     height: 100%;
@@ -838,19 +1083,19 @@ body {
         color: #fff;
     }
 
-    .contact-datos img{
+    .contact-datos img {
         width: 50px;
         height: 50px;
     }
-    
-    .contact-dato{
+
+    .contact-dato {
         font-size: 1.25rem;
     }
 
-    .contact-dato a{
+    .contact-dato a {
         color: #ccc;
     }
-} 
+}
 
 .contacto-column.form {
     padding: 30px;
@@ -869,7 +1114,8 @@ body {
         margin-bottom: 20px;
     }
 
-    input, textarea {
+    input,
+    textarea {
         width: 95%;
         padding: 10px;
         border: none;
@@ -878,12 +1124,13 @@ body {
         background: transparent;
     }
 
-    input:focus, textarea:focus {
+    input:focus,
+    textarea:focus {
         border-bottom: 2px solid var(--primary-color);
     }
 
     button {
-        background:  var(--primary-color);
+        background: var(--primary-color);
         border-radius: 10px;
         padding: 5px;
         width: 20%;
@@ -921,28 +1168,28 @@ footer {
     text-decoration: none;
 }
 
-footer .message{
+footer .message {
     text-align: center;
     font-family: var(--fuente-menu);
     max-width: 20%;
 }
 
-.contact-datos{
+.contact-datos {
     display: flex;
     align-items: end;
     gap: 20px;
 }
 
-.margin-bottom{
+.margin-bottom {
     margin-bottom: 30px;
 }
 
-.contact-datos img{
+.contact-datos img {
     width: 30px;
     height: 30px;
 }
 
-.contact-dato{
+.contact-dato {
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -950,7 +1197,7 @@ footer .message{
     font-size: 0.75rem;
 }
 
-.contact-dato-title{
+.contact-dato-title {
     font-family: var(--fuente-menu);
 }
 
@@ -961,7 +1208,7 @@ footer .message{
     line-height: 1.2;
 }
 
-footer .menu ul{
+footer .menu ul {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -977,12 +1224,12 @@ footer .menu ul{
     text-decoration: underline;
 }
 
-footer .redes{
+footer .redes {
     text-align: center;
     max-width: 15%;
 }
 
-.footer-redes-iconos img{
+.footer-redes-iconos img {
     width: 35px;
     height: 35px;
     margin: 0 10px;
@@ -1042,7 +1289,6 @@ footer .redes{
     }
 
 
-
     .container-main-contacto {
         height: 60vh;
     }
@@ -1094,34 +1340,76 @@ footer .redes{
         }
     }
 
-    .contact-datos img{
+    .contact-datos img {
         width: 20px;
         height: 20px;
     }
 
 
-    /* PAGE - BLOG */
-    .container-main-intro p{
+    /* PAGE - NOSOTROS */
+    .container-historia {
         width: 80%;
     }
 
-    .container-main-blogs{
+    .container-historia-texto p {
+        padding: 50px 30px;
+    }
+
+
+    .container-folosofia {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    
+    .container-folosofia-imgdifuminada {
+        height: 450px;
+    }
+    
+    .container-folosofia-img {
+        top: 15%;
+        left: 15%;
+        transform: translate(-17%, 10%);
+    }
+    
+    .container-folosofia-img img {
+        height: 300px;
+    }
+
+
+    .img-why-fondo {
+        height: 85%;
+        top: 52%;
+    }
+    
+
+    .container-logros {
+        justify-content: space-around;
+    }
+    
+
+    /* PAGE - BLOG */
+    .container-main-intro p {
+        width: 80%;
+    }
+
+    .container-main-blogs {
         height: 80vh;
     }
-    
-    .content-main-blogs{
+
+    .content-main-blogs {
         height: 90vh;
     }
-    
+
 
     /* PAGE - CONTACTO */
     .container-banner {
         height: 65vh;
     }
 
-    .container-main-pagecontacto{
+    .container-main-pagecontacto {
         margin-bottom: 40px;
-        h2{
+
+        h2 {
             font-size: 1.75rem;
         }
     }
@@ -1132,50 +1420,83 @@ footer .redes{
         bottom: 25px;
         left: 45%;
     }
-    
+
     .contacto-contenido {
         max-width: 1000px;
         padding: 20px 60px;
     }
-    
+
     .contacto-column.contact {
         display: flex;
         flex-direction: column;
         gap: 50px;
         margin-left: 80px;
-    
-        .contact-datos img{
+
+        .contact-datos img {
             width: 40px;
             height: 40px;
         }
-        
-        .contact-dato{
+
+        .contact-dato {
             font-size: 1rem;
         }
-    } 
-    
+    }
+
     .contacto-column.form {
         padding: 30px;
-    
+
         form {
             width: 90%;
         }
-    
+
         h2 {
             font-size: 2.75rem;
         }
-    
+
         button {
             width: 25%;
         }
     }
-    
 
-    .footer-redes-iconos img{
+
+    .footer-redes-iconos img {
         width: 25px;
         height: 25px;
     }
 
+
+    .banner-nosotros {
+        height: 65vh;
+    }
+}
+
+@media (max-width: 910px) {
+
+    /* PAGE - NOSOTROS */
+
+
+    .container-folosofia {
+        transform: translateY(-55%);
+    }
+    
+    .container-folosofia-img img {
+        height: 250px;
+    }
+    
+
+    .container-why {
+        width: calc(80% - 60px);
+        padding: 80px 10px 30px 30px;
+        top: -250px;
+    }
+
+    .why-columna-uno .columna-uno {
+        width: 65%;
+    }
+
+    .why-columna-dos {
+        top: 10px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -1204,11 +1525,11 @@ footer .redes{
     }
 
     .secundario {
-        .activo{
+        .activo {
             border-radius: 16px 16px 0 0;
         }
-    
-        a:hover{
+
+        a:hover {
             border-radius: 15px 15px 0 0;
         }
     }
@@ -1251,10 +1572,12 @@ footer .redes{
             height: 0;
             margin-bottom: 30px;
         }
+
         p {
             height: 90px;
             margin-bottom: 15px;
         }
+
         button {
             margin-bottom: 20px;
         }
@@ -1377,23 +1700,23 @@ footer .redes{
         gap: 50px;
     }
 
-    .container-main-intro p{
+    .container-main-intro p {
         width: 80%;
         font-weight: 400;
         font-size: 1rem;
     }
 
-    .container-main-blogs{
+    .container-main-blogs {
         height: 20vh;
         padding: 100px 50px 300px 50px;
     }
-    
-    .content-main-blogs{
+
+    .content-main-blogs {
         height: 40vh;
         gap: 0px;
     }
 
-    .main-blogs-contenido{
+    .main-blogs-contenido {
         .blog-card {
             width: 230px;
 
@@ -1401,23 +1724,23 @@ footer .redes{
                 font-size: 1rem;
             }
 
-            p{
+            p {
                 font-size: .75rem;
                 margin-bottom: 10px;
             }
         }
     }
 
-    .main-blogs-menu{
+    .main-blogs-menu {
         min-width: calc(100% / 2 - 130px);
         margin: 15px;
         padding: 20px;
-    
-        h3{
+
+        h3 {
             font-size: 1rem;
         }
-    
-        strong{
+
+        strong {
             font-size: 1rem;
             font-weight: 800;
         }
@@ -1433,10 +1756,10 @@ footer .redes{
         }
     }
 
-    .container-main-pagecontacto h2{
+    .container-main-pagecontacto h2 {
         font-size: 1.5rem;
     }
-    
+
     .contacto-column-white {
         background-color: white;
         box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.5);
@@ -1449,46 +1772,135 @@ footer .redes{
         transform: translateX(6%);
         z-index: 1;
     }
-    
+
     .contacto-contenido {
         max-width: 768px;
         padding: 20px;
     }
-    
+
     .contacto-column.contact {
         margin-left: 50px;
-    
-        .contact-datos img{
+
+        .contact-datos img {
             width: 35px;
             height: 35px;
         }
-        
-        .contact-dato{
+
+        .contact-dato {
             font-size: 1rem;
         }
-    } 
-    
+    }
+
     .contacto-column.form {
         h2 {
             font-size: 1.5rem;
         }
-    
-        input, textarea {
+
+        input,
+        textarea {
             width: 80%;
         }
-    
+
         button {
             width: 35%;
         }
     }
 
 
-    footer .message{
+    footer .message {
         max-width: 100%;
     }
 
-    footer .redes{
+    footer .redes {
         max-width: 100%;
+    }
+
+
+    /* PAGE - NOSOTROS */
+    .banner-nosotros {
+        height: 45vh;
+    }
+
+
+    .container-historia {
+        top: 10%;
+        transform: translateY(-20%);
+
+        flex-direction: column-reverse;
+    }
+    
+    .container-historia-texto p {
+        padding: 60px 30px;
+    }
+    
+    .container-histroia-img {
+        padding: 160px 0;
+    }
+
+
+    .container-folosofia {
+        transform: translateY(-45%);
+    }
+    
+    .container-folosofia-imgdifuminada {
+        height: 350px;
+    }
+    
+    .container-folosofia-img {
+        top: 15%;
+        left: 15%;
+        transform: translate(-20%, 18%);
+    }
+    
+    .container-folosofia-img img {
+        height: 220px;
+    }
+
+    .container-folosofia-texto {
+        padding: 10% 10% 0 10%;
+        max-width: 30%;
+
+        h2{
+            font-size: 1.25rem;
+        }
+        p{
+            font-size: .75rem;
+        }
+    }
+
+    .container-why {
+        width: calc(80% - 10px);
+        top: -200px;
+        flex-direction: column;
+    }
+    
+    .why-columna-uno {
+        gap: 10px;
+        h2 {
+            font-size: 1.75rem;
+        }
+    
+        .columna-uno {
+            width: 89%;
+        }
+    }
+    
+    .container-why-items {
+        gap: 60px;
+    
+        h3 {
+            font-size: 1.25rem;
+        }
+    }
+    
+    .img-why-fondo {
+        height: 38%;
+        width: 95%;
+        left: 80%;
+        top: 65%;
+        transform: translate(-90%, -10%);
+        z-index: 1; 
+        filter: brightness(0.3) hue-rotate(200deg);
     }
     
 }
@@ -1511,6 +1923,7 @@ footer .redes{
             font-size: 1rem;
             margin-bottom: 20px;
         }
+
         p {
             height: auto;
             margin-bottom: 5px;
@@ -1534,7 +1947,7 @@ footer .redes{
         }
     }
 
-    
+
     .container-main-propiedades {
         height: 185vh;
     }
@@ -1558,60 +1971,149 @@ footer .redes{
         left: -290px;
     }
 
-
-
     .container-banner {
         height: 30vh;
     }
 
+    /* PAGE - NOSOTROS */
+    .banner-nosotros {
+        height: 30vh;
+    }
+
+
+    .container-historia {
+        transform: translateY(-10%);
+    }
+
+    .container-historia-texto p {
+        padding: 30px 20px;
+    }
+    
+    .container-histroia-img {
+        padding: 130px 0;
+    }
+
+
+    .container-folosofia {
+        transform: translateY(-20%);
+        flex-direction: column;
+    }
+    
+    .container-folosofia-imgdifuminada {
+        padding: 130px 0;
+    }
+    
+    .container-folosofia-img {
+        top: 5%;
+        left: 30%;
+        transform: translate(-20%, 18%);
+    }
+    
+    .container-folosofia-img img {
+        height: 230px;
+    }
+
+    .container-folosofia-texto {
+        padding: 10% 15%;
+        max-width: 100%;
+
+        h2{
+            font-size: 1rem;
+        }
+    }
+    
+
+    .container-why {
+        width: 80%;
+        top: -130px;
+    }
+    
+    .why-columna-uno {
+        h2 {
+            font-size: 1.25rem;
+        }
+    
+        .columna-uno {
+            width: 85%;
+        }
+    }
+    
+    .container-why-items {
+        gap: 50px;
+    
+        h3 {
+            font-size: 1rem;
+        }
+    }
+    
+    .img-why-fondo {
+        height: 38%;
+        width: 95%;
+        left: 85%;
+        top: 64%;
+        transform: translate(-90%, -10%);
+        z-index: 1; 
+        filter: brightness(0.3) hue-rotate(200deg);
+    }
+
+    .logros-item{
+        width: 20vh;
+    
+        img {
+            width: 20vh;
+            height: 20vh;
+        }
+    }
+
 
     /* PAGE - BLOG */
-    .container-main-intro p{
+    .container-main-intro p {
         width: 90%;
         font-size: .75rem;
     }
 
-    .container-main-blogs{
+    .container-main-blogs {
         padding: 100px 10px 300px 10px;
         height: 5vh;
     }
-    
-    .content-main-blogs{
+
+    .content-main-blogs {
         height: 30vh;
     }
 
-    .main-blogs-contenido{
+    .main-blogs-contenido {
         .blog-card {
             width: 100px;
         }
     }
 
-    .main-blogs-menu{
+    .main-blogs-menu {
         min-width: calc(100% / 2 - 100px);
         height: 20vh;
 
-        h3{
+        h3 {
             font-size: .5rem;
         }
 
-        li{
+        li {
             font-size: .5rem;
         }
-    
-        strong{
+
+        strong {
             font-size: .75rem;
         }
     }
 
-    .container-main-pagecontacto{
+    .container-main-pagecontacto {
         align-items: center;
         justify-content: center;
-        h2{
+
+        h2 {
             font-size: 1.25rem;
             width: 90%;
         }
     }
-    
+
     .contacto-column-white {
         width: 80%;
         height: 70%;
@@ -1620,7 +2122,7 @@ footer .redes{
         left: 6%;
         transform: translateX(6%);
     }
-    
+
     .contacto-contenido {
         flex-direction: column-reverse;
         max-width: 540px;
@@ -1634,27 +2136,28 @@ footer .redes{
         gap: 40px;
         margin-left: 0px;
 
-        .contact-datos img{
+        .contact-datos img {
             width: 25px;
             height: 25px;
         }
-        
-        .contact-dato{
+
+        .contact-dato {
             font-size: .75rem;
         }
-    } 
-    
+    }
+
     .contacto-column.form {
         padding: 20px;
-    
+
         form {
             width: 100%;
         }
-    
-        input, textarea {
+
+        input,
+        textarea {
             width: 100%;
         }
-    
+
         button {
             width: 30%;
         }
