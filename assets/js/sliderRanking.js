@@ -1,16 +1,39 @@
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".slider-clientes");
-    const cards = document.querySelectorAll(".slider-clientes .card");
+    let isAnimating = false;
     let interval;
 
-    function moveSlider() {
-        const firstCard = slider.firstElementChild;
-        slider.appendChild(firstCard.cloneNode(true));
-        slider.removeChild(firstCard);
+    function moveSlider(direction) {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        if (direction === "next") {
+            slider.style.transition = "transform 0.5s ease-in-out";
+            slider.style.transform = "translateX(-230px)"; // Ajusta según el tamaño de la tarjeta + gap
+
+            setTimeout(() => {
+                const firstCard = slider.firstElementChild;
+                slider.appendChild(firstCard);
+                slider.style.transition = "none";
+                slider.style.transform = "translateX(0)";
+                isAnimating = false;
+            }, 500);
+        } else if (direction === "prev") {
+            const lastCard = slider.lastElementChild;
+            slider.prepend(lastCard);
+            slider.style.transition = "none";
+            slider.style.transform = "translateX(-230px)"; // Ajusta según el tamaño de la tarjeta + gap
+
+            setTimeout(() => {
+                slider.style.transition = "transform 0.5s ease-in-out";
+                slider.style.transform = "translateX(0)";
+                isAnimating = false;
+            }, 10);
+        }
     }
 
     function startAutoSlide() {
-        interval = setInterval(moveSlider, 15000); // Mueve cada 5 segundos
+        interval = setInterval(() => moveSlider("next"), 15000);
     }
 
     function stopAutoSlide() {
@@ -19,15 +42,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector("#prev").addEventListener("click", function () {
         stopAutoSlide();
-        const lastCard = slider.lastElementChild;
-        slider.prepend(lastCard.cloneNode(true));
-        slider.removeChild(lastCard);
+        moveSlider("prev");
         startAutoSlide();
     });
 
     document.querySelector("#next").addEventListener("click", function () {
         stopAutoSlide();
-        moveSlider();
+        moveSlider("next");
         startAutoSlide();
     });
 

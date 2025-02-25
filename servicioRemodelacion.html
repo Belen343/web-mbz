@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Empresa constructora e inmobiliaria especializada en el desarrollo de proyectos de calidad. Ofrecemos construcción de viviendas, edificios y espacios comerciales, además de compra, venta y alquiler de propiedades.">
+    <meta name="keywords"
+        content="mbz, construcción, inmobiliaria, compra de casas, venta de propiedades, alquiler de inmuebles, proyectos inmobiliarios, bienes raíces, arquitectura, constructoras, inversión inmobiliaria">
+    <meta name="author" content="Ing. Belen Hernández Virgen">
+    <title>mbz Constructora & Inmobiliaria</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- Link SwiperJS CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+</head>
+
+<body>
+    <header class="cabecera secundario">
+        <div class="cabecera-menuPrincipal">
+            <a href="index.html" class="cabecera-logo">
+                <img src="assets/img/logoColor.png" alt="Logo de la empresa">
+            </a>
+            <nav class="cabecera-navegacion">
+                <ul>
+                    <li><a href="servicios.html" class="activo">Servicios</a></li>
+                    <li><a href="ventas.html">Venta</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="cabecera-menuExtra">
+            <a href="blogs.html">Blogs</a>
+            <a href="contacto.html">Contacto</a>
+            <a href="#" class="whatsapp"><img src="assets/iconos/whatsapp.svg" alt="Icono de WhatsApp"></a>
+        </div>
+    </header>
+
+    <div class="container-banner banner-primario">
+        <div class="submenu-header">
+            <a href="servicios.html">Servicios</a>
+            <p>/</p>
+            <a href="servicioRemodelacion.html">Remodelación</a>
+        </div>
+        <h1>Remodelación</h1>
+    </div>
+
+    <main class="container-main">
+        <div class="caracteristicas-servicio remodelacion">
+            <div class="caracteristicas-items-servicio">
+                <div class="container-item-servicio">
+                    <img src="./assets/iconos/servicios/transformacion.svg" alt="Icono de transformar">
+                    <div class="container-texto-servicio">
+                        <h3>Transformación con estilo:</h3>
+                        <p>Desde remodelaciones completas hasta pequeños diseños, renovamos tu prioridad para <strong>brindarte la modernidad y funcionalidad</strong> que buscas.</p>
+                    </div>
+                </div>
+                <div class="container-item-servicio">
+                    <img src="./assets/iconos/servicios/ideas.svg" alt="Icono de idea">
+                    <div class="container-texto-servicio">
+                        <h3>Soluciones personalizadas</h3>
+                        <p>Cada proyecto de remodelación es único y <strong>adaptado a tus necesidades</strong> asegurando espacios prácticos, cómodos y a la medida.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="caracteristicas-items-servicio servcio-centro">
+                <div class="container-item-servicio centro">
+                    <img src="./assets/iconos/servicios/material-calidad.svg" alt="Icono de calidad">
+                    <div class="container-texto-servicio texto-servicio-white">
+                        <h3>Materiales de calidad</h3>
+                        <p>Utilizamos materiales de semilujo para crear acabados que resalten <strong>estética y durabilidad</strong> de cada rincón.</p>
+                    </div>
+                </div>
+                <div class="container-item-servicio centro">
+                    <img src="./assets/iconos/servicios/optimizar.svg" alt="Icono de optimizar">
+                    <div class="container-texto-servicio texto-servicio-white">
+                        <h3>Rediseños innovadores</h3>
+                        <p>Creamos <strong>ambientes atractivos y funcionales</strong> mejorando la estética y funcionalidad de tu hogar, oficina o negocio.</p>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+        <div class="galeria-servicio">
+            <h3>Galería de fotos:</h3>
+
+            <div class="card-wrapper swiper">
+                    <ul class="card-list swiper-wrapper">
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto1.jpg" alt="Casa en construcción 1" class="card-image">
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto2.jpg" alt="Casa en construcción 2" class="card-image">
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto3.jpg" alt="Foto en construcción 3" class="card-image">
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto4.jpg" alt="Foto en construcción 4" class="card-image">
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto5.jpg" alt="Foto en construcción 5" class="card-image">
+                        </li>
+                        <li class="card-item swiper-slide">
+                            <img src="./assets/img/servicios/construccion/foto6.jpg" alt="Foto en construcción 6" class="card-image">
+                        </li>
+                    </ul>
+                    
+                    <div class="swiper-pagination"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal para la imagen en grande -->
+    <div id="modal-imagen" class="modal">
+        <span class="cerrar" onclick="cerrarImagen()">&times;</span>
+        <img class="modal-contenido" id="imagen-modal">
+    </div>
+
+    <footer>
+        <div class="container-footer">
+
+            <div class="footer-column message">
+                <p>¡Contáctanos hoy mismo y hagamos realidad tu nuevo hogar!</p>
+            </div>
+
+            <div class="footer-column contact">
+                <div class="contact-datos margin-bottom">
+                    <img src="./assets/iconos/telefono.svg" alt="Icono de teléfono">
+                    <div class="contact-dato">
+                        <p class="contact-dato-title">TELÉFONO: </p>
+                        <a href="">
+                            <p>1234567890</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-datos margin-bottom">
+                    <img src="./assets/iconos/celular.svg" alt="Icono de celular">
+                    <div class="contact-dato">
+                        <p class="contact-dato-title">CELULAR: </p>
+                        <a href="">
+                            <p>1234567890</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="contact-datos">
+                    <img src="./assets/iconos/mail.svg" alt="Icono de teléfono">
+                    <div class="contact-dato">
+                        <p class="contact-dato-title">CORREO: </p>
+                        <a href="">
+                            <p>contacto@mbz.com</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-column menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="servicios.html">SERVICIOS</a></li>
+                    <li><a href="ventas.html">VENTA</a></li>
+                    <li><a href="nosotros.html">NOSOTROS</a></li>
+                    <li><a href="blogs.html">BLOG</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-column redes">
+                <p>¡SÍGUENOS EN NUESTRAS REDES!</p>
+                <div class="footer-redes-iconos">
+                    <a href="#"><img src="./assets/iconos/facebook.svg" alt="Icono de Facebook"></a>
+                    <a href="#"><img src="./assets/iconos/intagram.svg" alt="Icono de Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Link SwiperJS Script -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./assets/js/gallerySlider.js"></script>
+    <script src="./assets/js/galleryModal.js"></script>
+    <script>
+        function abrirImagen(img) {
+            let modal = document.getElementById("modal-imagen");
+            let modalImg = document.getElementById("imagen-modal");
+            
+            modal.style.display = "block";
+            modalImg.src = img.src;
+        }
+        
+        function cerrarImagen() {
+            document.getElementById("modal-imagen").style.display = "none";
+        }
+    </script>
+</body>
+
+</html>
