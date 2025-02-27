@@ -554,6 +554,7 @@ body {
 
     a:hover {
         font-weight: bold;
+        text-decoration: underline;
     }
 }
 
@@ -677,7 +678,9 @@ body {
     }
 
     button:hover {
-        background-color: rgba(0, 77, 154, 0.3);
+        border: none;
+        background-color: var(--primary-color);
+        color: white;
     }
 }
 
@@ -994,6 +997,399 @@ body {
     font-size: 40px;
     font-weight: bold;
     cursor: pointer;
+}
+
+
+/* VENTAS - BANNER */
+.ventas {
+    align-items: flex-end;
+    padding-right: 100px;
+}
+
+.continer-main-ventas{
+    margin: 10px 30px 30px;
+
+    h2{
+        font-family: var(--fuente-titulo);
+        text-align: center;
+        font-size: 2rem;
+        color: var(--primary-color);
+
+    }
+}
+
+/* VENTAS - SELECT */
+.container-main-select{
+    background-image: url('../img/fondo1-venta.svg');
+    background-size: cover;
+    background-position: center;
+    height: 40vh;
+    position: relative;
+    z-index: 0;
+}
+
+.container-select{
+    padding: 0 10px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 15px;
+    position: relative;
+    top: 50%;
+    z-index: 1;
+    overflow-x: hidden;
+
+    select{
+        flex: 1;
+        height: 45px;
+        border-radius: 10px;
+        border: 2px solid var(--secondary-color);
+        padding: 10px;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    select:focus {
+        outline: none;
+        border-color: var(--tertiary-color);
+        box-shadow: 3px 3px 8px rgba(0, 123, 255, 0.5);
+    }
+}
+
+/* VENTAS - CARD X CASA */
+.container-items-casa {
+    padding: 100px 0 10px 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 0;
+}
+
+.item-casa-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 350px;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.casa-card-fondo {
+    width: 100%;
+    height: 250px;
+    border-radius: 15px;
+    background-image: url('../img/fondo-venta-casa.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+
+    img{
+        width: 100%;
+        height: 110%;
+        object-fit: contain;
+        position: absolute;
+        top: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+}
+
+.casa-card-detalles {
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: white;
+        text-align: left;
+    }
+
+    li {
+        margin-bottom: 8px;
+    }
+
+    .card-detalles-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px;
+        width: 20%;
+        background-color: white;
+        color: var(--primary-color);
+        text-decoration: none;
+        text-align: center;
+        border-radius: 12px;
+        align-self: flex-end;
+        font-family: var(--fuente-menu);
+    }
+
+    .card-detalles-button:hover {
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
+    }
+}
+
+/* CASA HABITACIÓN - HEADER */
+.continer-header-casa {
+    margin: 10px 30px 30px;
+    background-image: url('../img/fondo1-casa.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    height: 20vh;
+    position: relative;
+
+    img{
+        position: absolute;
+        left: 10%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 16%;
+        width: auto;
+    }
+    h2{
+        font-family: var(--fuente-titulo);
+        font-size: 3rem;
+        color: white;
+        text-align: center;
+        position: relative;
+        top: 40%;
+    }
+}
+
+/* CASA HABITACIÓN - PRESENTACIÓN */
+.container-content-casa{
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.8);
+    margin: 10px 30px 30px;
+    padding: 10px 50px;
+    overflow: hidden;
+}
+
+.content-casa-presentacion{
+    display: flex;
+    align-items: stretch;
+    gap: 20px;
+}
+
+.content-casa-img {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img{
+        width: 100%;
+        height: 100%;
+        padding: 0 50px;
+        object-fit: cover;
+    }
+}
+
+.content-casa-info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+
+    .casa-text{
+        background-color: var(--primary-color);
+        color: white;
+        padding: 30px;
+        border-radius: 20px;
+        line-height: 1.5;
+        
+        h3{
+            font-family: var(--fuente-titulo);
+            font-size: 2rem;
+        }
+        p{
+            padding: 15px 0;
+            font-family: var(--fuente-detalles);
+        }
+        strong{
+            font-family: var(--fuente-menu);
+        }
+    }
+
+    .casa-list{
+        border: 2px solid var(--primary-color);
+        padding: 30px;
+        border-radius: 20px;
+        h3{
+            font-family: var(--fuente-titulo);
+            font-size: 2rem;
+            color: var(--secondary-color);
+        }
+        hr{
+            border-color: var(--primary-color);
+        }
+        ul{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        li{
+            border-radius: 15px;
+            padding: 5px 8px;
+            color: white;
+        }
+        .casa-list-uno{
+            padding: 10px 0 20px 0;
+            li{
+                background-color: var(--primary-color);
+            }
+        }
+        .casa-list-dos li{
+            background-color: var(--secondary-color);
+            
+        }
+    }
+}
+
+/* CASA HABITACIÓN - SLIDER */
+.content-casa-slider {
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+    padding: 20px;
+    
+    overflow: hidden;
+    position: relative;
+    
+    img{
+        height: 200px;
+        width: auto;
+        object-fit: cover;
+    }
+}
+
+#antes,
+#despues {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50%;
+    background-color: #ccc;
+    color: white;
+    width: 40px;
+    height: 40px;
+    opacity: 0.5;
+    font-size: 2rem;
+}
+
+#antes {
+    left: 0px;
+}
+
+#despues {
+    right: 0px;
+}
+
+#antes:hover,
+#despues:hover {
+    background-color: rgba(177, 200, 100, 0.8);
+}
+
+
+/* CASA HABITACIÓN - CONTACTO */
+.container-contacto-casa {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 100px 0;
+}
+
+.franja-contacto {
+    position: absolute;
+    width: 100%;
+    height: 80%;
+    background-color: var(--primary-color);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 0;
+}
+
+.content-contacto-casa {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+    z-index: 1;
+}
+
+.contacto-casa-img {
+    width: 50%;
+    height: 120%;
+    background-image: url('../img/img-casa1.png');
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px;
+}
+
+.contacto-casa-form {
+    width: 50%;
+    background-color: #B1C864;
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: white;
+
+    h3 {
+        font-family: var(--fuente-menu);
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+    label {
+        font-family: var(--fuente-detalles);
+        display: block;
+        margin: 5px 0;
+    }
+    input {
+        width: 95%;
+        padding: 10px;
+        border: none;
+        border-radius: 10px;
+        margin-bottom: 20px;
+        color: #000;
+    }
+    button {
+        font-family: var(--fuente-menu);
+        padding: 10px;
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: white;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
+    }
 }
 
 
@@ -1431,6 +1827,10 @@ body {
     .contact-dato a {
         color: #ccc;
     }
+
+    a:hover{
+        text-decoration: underline;
+    }
 }
 
 .contacto-column.form {
@@ -1475,7 +1875,9 @@ body {
     }
 
     button:hover {
-        background-color: var(--tertiary-color);
+        background-color: white;
+        border: 2px solid var(--primary-color);
+        color: var(--primary-color);
     }
 }
 
@@ -1938,7 +2340,53 @@ footer .redes {
         height: 30vh;
         padding-top: 30px;
     }
+
+
+    /* PAGE - VENTA */
+    .continer-header-casa {
+        margin: 10px 20px 20px;
+        height: 10vh;
     
+        img{
+            left: 5%;
+            top: 50%;
+            height: 12%;
+        }
+        h2{
+            font-size: 2rem;
+            top: 40%;
+        }
+    }
+
+
+    /* PAGE - CASA HABITACIÓN */
+    .continer-header-casa {
+        margin: 10px 30px 30px;
+        height: 8vh;
+        
+    }
+
+    .content-casa-presentacion{
+        flex-direction: column;
+        align-items: stcretch;
+        gap: 20px;
+    }
+
+    .content-casa-info{
+        flex-direction: row;
+        align-items: stretch;
+
+        .casa-text{
+            flex: 1;
+        }
+
+        .casa-list{
+            flex: 1;
+            hr{
+                margin: 25px 0;
+            }
+        }
+    }
 }
 
 @media (max-width: 768px) {
@@ -2418,6 +2866,54 @@ footer .redes {
         height: 300px;
     }
 
+
+    /* PAGE - VENTA */
+    .continer-main-ventas h2{
+        font-size: 1.5rem;
+    }
+    .container-main-select{
+        height: 100%;
+        padding: 100px 0 50px 0;
+    }
+
+    .container-select{
+        flex-wrap: wrap;
+        justify-content: center;
+    
+        select {
+            flex-basis: calc(50% - 10px);
+            padding: 5px;
+        }
+        select:first-child {
+            flex-basis: 100%;
+        }
+    }
+
+    /* PAGE - CASA HABITACIÓN */
+    .continer-header-casa {
+        margin: 10px 20px 20px;
+        
+    }
+
+    .container-contacto-casa{
+        margin: 50px 0;
+    }
+
+    .content-contacto-casa {
+        flex-direction: column;
+        align-items: center;
+        margin: 10px 20px 20px;
+        width: 70%;
+    }
+
+    .contacto-casa-form {
+        width: 100%;
+        border-radius: 15px;
+
+        h3{
+            font-size: 1.5rem;
+        }
+    }
 }
 
 @media (max-width: 540px) {
@@ -2739,5 +3235,69 @@ footer .redes {
 
     .container-texto-servicio{
         width: 70%;
+    }
+
+
+    /* PAGE - VENTA */
+    .continer-main-ventas h2{
+        font-size: 1rem;
+    }
+    .container-main-select{
+        padding: 80px 0 40px 0;
+    }
+
+    .container-select{
+        select {
+            height: 35px;
+        }
+    }
+
+    /* PAGE - CASA HABITACIÓN */
+    .continer-header-casa {
+        height: 5vh;
+    
+        img{
+            left: 10%;
+            top: 60%;
+        }
+        h2{
+            font-size: 1.25rem;
+        }
+    }
+
+    .container-content-casa{
+        margin: 10px 20px 20px;
+        padding: 10px 30px;
+    }
+    
+    .content-casa-info{
+        flex-direction: column;
+        gap: 10px;
+    
+        .casa-text{
+            padding: 20px;
+            h3{
+                font-size: 1.25rem;
+            }
+            p{
+                padding: 10px 0;
+            }
+        }
+    
+        .casa-list{
+            padding: 20px;
+            h3{
+                font-size: 1.25rem;
+            }
+            hr{
+                margin: 10px 0;
+            }
+            ul{
+                gap: 10px;
+            }
+            .casa-list-uno{
+                padding: 10px 0 15px 0;
+            }
+        }
     }
 }
