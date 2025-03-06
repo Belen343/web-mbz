@@ -22,7 +22,7 @@
 @font-face {
     font-family: 'ProximaNovaBold';
     src: url('../tipografy/ProximaNova-Bold.otf') format('opentype');
-    font-weight: 700;
+    font-weight: 900;
     font-style: normal;
 }
 
@@ -289,7 +289,8 @@ body {
     position: relative;
     background-image: url('../img/index/fondo2.svg');
     background-size: cover;
-    height: 80vh;
+    height: 100%;
+    padding: 50px 0;
     display: flex;
     justify-content: center;
 }
@@ -300,14 +301,14 @@ body {
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 30px 60px;
+    padding: 0px 30px;
 }
 
 .propiedades-items {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
     padding: 0 80px;
 }
 
@@ -359,8 +360,21 @@ body {
 .item-detalles ul li img {
     width: 20px;
     height: 20px;
-    margin-right: 10px;
+    margin-right: 5px;
 }
+
+.item-detalles ul li .img-recamara {
+    width: 35px;
+    height: 25px;
+    margin-right: 5px;
+}
+
+.item-detalles ul li .img-construccion {
+    width: 25px;
+    height: 25px;
+    margin-right: 15px;
+}
+
 
 .item-detalles ul li span {
     font-size: 0.75rem;
@@ -368,7 +382,8 @@ body {
 
 .main-propiedades-content {
     button {
-        margin-top: 50px;
+        font-family: var(--fuente-menu);
+        margin-top: 20px;
         padding: 10px 20px;
         background-color: #012063;
         border-radius: 10px;
@@ -841,6 +856,11 @@ body {
     display: flex;
     flex-direction: column;
     gap: 100px;
+
+    h1{
+        font-size: 8rem;
+        padding-bottom: 100px;
+    }
 }
 
 .banner-construccion{
@@ -853,13 +873,16 @@ body {
 
 .banner-equipamiento{
     background-image: url('../img/servicios/equipamiento/banner.svg');
+    h1{
+        padding-bottom: 60px;
+    }
 }
 
 .submenu-header{
     display: flex;
     align-items: center;
     gap: 10px;
-    top: -90px;
+    top: -60px;
     left: 30px;
     position: relative;
     color: white;
@@ -1247,11 +1270,39 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    position: relative;
 
     img{
         width: 100%;
         height: 100%;
         border-radius: 15px;
+    }
+
+    .casa-img-btn {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        border-radius: 50%;
+        background-color: #ccc;
+        color: white;
+        width: 40px;
+        height: 40px;
+        opacity: 0.5;
+        font-size: 2rem;
+        z-index: 10;
+    }
+    
+    .casa-img-btn:hover {
+        background-color: rgba(177, 200, 100, 0.8);
+    }
+
+    #prev-main {
+        left: 0px;
+    }
+    
+    #next-main {
+        right: 0px;
     }
 }
 
@@ -2051,7 +2102,8 @@ footer .redes {
 
 
     .container-main-propiedades {
-        height: 110vh;
+        height: 100%;
+        padding: 10px 0;
     }
 
     .main-propiedades-content {
@@ -2280,6 +2332,15 @@ footer .redes {
     .banner-primario{
         height: 70vh;
         gap: 50px;
+
+        h1{
+            font-size: 5rem;
+            padding-bottom: 60px;
+        }
+    }
+
+    .banner-equipamiento h1{
+            padding-bottom: 10px;
     }
 
     .servcio-centro{
@@ -2835,6 +2896,9 @@ footer .redes {
     .banner-primario{
         height: 40vh;
         gap: 10px;
+        h1{
+            font-size: 4rem;
+        }
     }
 
     .submenu-header{

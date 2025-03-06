@@ -1,7 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     const slider = document.querySelector(".content-casa-slider");
     const mainImage = document.querySelector(".content-casa-img img");
+    const images = Array.from(slider.querySelectorAll(".casa-card img"));
     let isAnimating = false;
+    let currentIndex = 0;
 
     function moveSlider(direction) {
         if (isAnimating) return;
@@ -41,10 +43,32 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // Evento para cambiar la imagen principal cuando se selecciona una del slider
-    document.querySelectorAll(".casa-card img").forEach(img => {
+    document.querySelectorAll(".casa-card img").forEach((img, index) => {
         img.addEventListener("click", function () {
-            mainImage.src = this.src;
-            mainImage.alt = this.alt;
+            currentIndex = index;
+            updateMainImage(currentIndex);
         });
+    });
+
+    // Función para actualizar la imagen principal
+    function updateMainImage(index) {
+        if (index >= images.length) {
+            currentIndex = 0; // Si llega al final, vuelve al inicio
+        } else if (index < 0) {
+            currentIndex = images.length - 1; // Si retrocede desde el primero, va al último
+        } else {
+            currentIndex = index;
+        }
+        mainImage.src = images[currentIndex].src;
+        mainImage.alt = images[currentIndex].alt;
+    }
+
+    // Eventos para los nuevos botones en content-casa-img
+    document.querySelector("#next-main").addEventListener("click", function () {
+        updateMainImage(currentIndex + 1);
+    });
+
+    document.querySelector("#prev-main").addEventListener("click", function () {
+        updateMainImage(currentIndex - 1);
     });
 });
