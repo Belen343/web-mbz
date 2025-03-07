@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", function () {
     const images = Array.from(slider.querySelectorAll(".casa-card img"));
     let isAnimating = false;
     let currentIndex = 0;
+    let intervalId = null;
+    let autoMoveEnabled = true;
 
     function moveSlider(direction) {
         if (isAnimating) return;
@@ -11,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (direction === "despues") {
             slider.style.transition = "transform 0.5s ease-in-out";
-            slider.style.transform = "translateX(-230px)"; // Ajusta según el tamaño de la tarjeta + gap
+            slider.style.transform = "translateX(-380px)";
 
             setTimeout(() => {
                 const firstCard = slider.firstElementChild;
@@ -24,7 +26,9 @@ document.addEventListener("DOMContentLoaded", function () {
             const lastCard = slider.lastElementChild;
             slider.prepend(lastCard);
             slider.style.transition = "none";
-            slider.style.transform = "translateX(-230px)"; // Ajusta según el tamaño de la tarjeta + gap
+            slider.style.transform = "translateX(-380px)";
+
+            
 
             setTimeout(() => {
                 slider.style.transition = "transform 0.5s ease-in-out";
@@ -34,15 +38,49 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    function startAutoMove(direction) {
+        if (!autoMoveEnabled) return;
+        intervalId = setInterval(() => moveSlider(direction), 500);
+    }
+
+    function stopAutoMove() {
+        clearInterval(intervalId);
+    }
+
+    function disableAutoMove() {
+        autoMoveEnabled = false;
+        stopAutoMove();
+    }
+
     document.querySelector("#antes").addEventListener("click", function () {
+        disableAutoMove();
         moveSlider("antes");
     });
 
     document.querySelector("#despues").addEventListener("click", function () {
+        disableAutoMove();
         moveSlider("despues");
     });
 
-    // Evento para cambiar la imagen principal cuando se selecciona una del slider
+    // Reiniciar autoMoveEnabled cuando el mouse entra en el botón después de haber salido
+    document.querySelector("#antes").addEventListener("mouseenter", function () {
+        if (!autoMoveEnabled) autoMoveEnabled = true;
+        startAutoMove("antes");
+    });
+
+    document.querySelector("#antes").addEventListener("mouseleave", function () {
+        stopAutoMove();
+    });
+
+    document.querySelector("#despues").addEventListener("mouseenter", function () {
+        if (!autoMoveEnabled) autoMoveEnabled = true;
+        startAutoMove("despues");
+    });
+
+    document.querySelector("#despues").addEventListener("mouseleave", function () {
+        stopAutoMove();
+    });
+
     document.querySelectorAll(".casa-card img").forEach((img, index) => {
         img.addEventListener("click", function () {
             currentIndex = index;
@@ -50,12 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Función para actualizar la imagen principal
     function updateMainImage(index) {
         if (index >= images.length) {
-            currentIndex = 0; // Si llega al final, vuelve al inicio
+            currentIndex = 0;
         } else if (index < 0) {
-            currentIndex = images.length - 1; // Si retrocede desde el primero, va al último
+            currentIndex = images.length - 1;
         } else {
             currentIndex = index;
         }
@@ -63,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
         mainImage.alt = images[currentIndex].alt;
     }
 
-    // Eventos para los nuevos botones en content-casa-img
     document.querySelector("#next-main").addEventListener("click", function () {
         updateMainImage(currentIndex + 1);
     });

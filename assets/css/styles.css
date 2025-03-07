@@ -180,6 +180,23 @@ body {
         height: 100%;
         object-fit: cover;
     }
+
+    .btn-contact {
+        position: absolute;
+        left: 50%;
+        bottom: 20%; /* Ajusta este valor para ponerlo más cerca o más lejos del centro vertical */
+        transform: translateX(-50%);
+        padding: 16px 28px;
+        background-color: var(--secondary-color);
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        transition: background-color 0.3s;
+    }
+
+    .btn-contact:hover {
+        opacity: 0.8;
+    }
 }
 
 /* HOME - SERVICIOS */
@@ -541,31 +558,39 @@ body {
 }
 
 .blog-card {
+    display: flex;
+    flex-direction: column;
     background-color: #EAEAEA;
     border-radius: 15px;
     box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
     padding: 10px;
+    width: 300px;
 
     img {
-        width: 300px;
+        width: 290px;
         border-radius: 15px;
+        align-self: center;
     }
 
     h3 {
-        font-family: var(--fuente-titulo);
+        font-family: var(--fuente-menu);
         font-size: 1.25rem;
         color: var(--secondary-color);
+        padding: 5px 10px;
     }
 
     p {
         color: var(--primary-color);
         margin-bottom: 30px;
+        padding: 0px 10px;
+        height: 100px;
     }
 
     a {
         color: var(--secondary-color);
         cursor: pointer;
         transition: background-color 0.3s;
+        padding: 0px 10px;
     }
 
     a:hover {
@@ -1549,7 +1574,7 @@ body {
 
 .container-histroia-img {
     flex: 1;
-    background-image: url('../img/nosotros/history.jpg');
+    background-image: url('../img/nosotros/builder.webp');
     background-size: cover;
     background-position: center;
 }
@@ -1748,14 +1773,14 @@ body {
     background-size: cover;
     padding: 200px 50px;
     margin: 0 30px;
-    height: 100vh;
+    height: 100%;
     width: auto;
 }
 
 .content-main-blogs {
     display: flex;
     gap: 20px;
-    height: 100vh;
+    height: calc(100% - 50px);
     overflow-y: auto;
     overflow-x: hidden;
 }
@@ -1788,7 +1813,17 @@ body {
 
     .blog-card {
         width: 300px;
+        height: 380px;
+
+        img{
+            border-radius: 15px 15px 0px 0px;
+        }
+
+        h3{
+            padding: 10px;
+        }
     }
+
 }
 
 .main-blogs-menu {
@@ -1823,7 +1858,7 @@ body {
         align-items: center;
         margin: 0 10px;
         padding: 0;
-        width: 90%;
+        width: 80%;
         color: var(--secondary-color);
     }
 
@@ -2536,6 +2571,14 @@ footer .redes {
                 0 100%
                 /* Línea recta de regreso hasta la esquina inferior izquierda */
             );
+
+        .btn-contact {
+                position: absolute;
+                left: 50%;
+                bottom: 20%; /* Ajusta este valor para ponerlo más cerca o más lejos del centro vertical */
+                transform: translateX(-50%);
+                padding: 10px 16px;
+        }
     }
 
 
@@ -2716,15 +2759,27 @@ footer .redes {
 
     .main-blogs-contenido {
         .blog-card {
-            width: 100%;
+            width: 180px;
+            height: 320px;
 
-            h3 {
-                font-size: 1rem;
+            img{
+                width: 100%;
             }
 
+            h3 {
+                padding: 5px;
+                font-size: 1rem;
+                height: 80px;
+            }
+        
             p {
-                font-size: .75rem;
-                margin-bottom: 10px;
+                height: 100px;
+                padding: 0px 5px;
+                font-size: o.75rem;
+            }
+        
+            a {
+                padding: 5px;
             }
         }
     }
@@ -3191,10 +3246,26 @@ footer .redes {
 
     .main-blogs-contenido {
         .blog-card {
-            width: 100px;
+            width: 150px;
+            height: 230px;
+
 
             img{
                 width: 100%;
+            }
+
+            h3 {
+                padding: 5px;
+                font-size: 0.75rem;
+            }
+        
+            p {
+                height: 60px;
+                padding: 0px 5px;
+            }
+        
+            a {
+                padding: 5px;
             }
         }
     }
