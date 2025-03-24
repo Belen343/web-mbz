@@ -763,7 +763,7 @@ body {
 .banner-servicios {
     background-image: url('../img/servicios/banner.svg');
     margin: 10px 30px 30px;
-    height: 100vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -801,8 +801,8 @@ body {
     position: relative;
     background: var(--primary-color);
     border-radius: 20px;
-    height: 48vh;
-    width: 38vh;
+    height: 55vh;
+    width: 40vh;
     box-shadow: -10px 10px 20px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
@@ -884,7 +884,7 @@ body {
     gap: 100px;
 
     h1{
-        font-size: 8rem;
+        font-size: 6rem;
         padding-bottom: 100px;
     }
 }
@@ -900,7 +900,8 @@ body {
 .banner-equipamiento{
     background-image: url('../img/servicios/equipamiento/banner.svg');
     h1{
-        padding-bottom: 60px;
+        white-space: normal;
+        padding-bottom: 0px;
     }
 }
 
@@ -1552,8 +1553,8 @@ body {
     gap: 0px;
     width: 70%;
     position: relative;
-    top: 45%;
-    transform: translateY(-45%);
+    top: 40%;
+    transform: translateY(-40%);
     z-index: 3;
     margin: 0 auto;
 }
@@ -1585,8 +1586,8 @@ body {
     position: relative;
     align-items: stretch;
     width: 100%;
-    top: 45%;
-    transform: translateY(-45%);
+    top: 40%;
+    transform: translateY(-40%);
     z-index: 2;
     background-color: var(--primary-color);
 }
