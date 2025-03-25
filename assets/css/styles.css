@@ -1246,6 +1246,44 @@ body {
     }
 }
 
+/* VENTAS - PREVENTA */
+.container-main-preventa{
+    background-image: url('../img/venta/fondo2.svg');
+    background-size: cover;
+    background-position: center;
+    height: 60vh;
+    padding-top: 30px;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.container-preventa{
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    z-index: 1;
+
+    a{
+        padding: 10px 160px;
+        border-radius: 10px;
+        background-color: #A5BA4D;
+        box-shadow: 
+        2px 0 10px rgba(0, 0, 0, 0.2),     /* Sombra fina izquierda */
+        -2px 0 10px rgba(0, 0, 0, 0.2),    /* Sombra fina derecha */
+        0 15px 25px -15px rgba(0, 0, 0, 0.8);  /* Sombra fuerte solo abajo */
+        color: #fff;
+        font-family: var(--fuente-titulo);
+        font-size: 4rem;
+    }
+    a:hover{
+        scale: 1.1;
+    }
+}
+
 /* CASA HABITACIÓN - HEADER */
 .continer-header-casa {
     margin: 10px 30px 30px;
@@ -1261,7 +1299,7 @@ body {
         position: absolute;
         left: 10%;
         top: 50%;
-        transform: translateY(-50%);
+        transform: translateY(-10%);
         z-index: 100;
     }
     img{
@@ -1493,6 +1531,16 @@ body {
     background-image: url('../img/venta/C2.png');
 }
 
+.casaAtlixco-img{
+    background-image: url('../img/preventa/C1-Sky.png');
+    height: 100%;
+    width: 45%;
+    border-radius: 20px 20px 0px 0px;
+    position: relative;
+    top: -20px;
+    right: -20px;
+}
+
 .contacto-casa-form {
     width: 50%;
     background-color: #B1C864;
@@ -1534,6 +1582,144 @@ body {
         background-color: white;
         border: 2px solid var(--primary-color);
         color: var(--primary-color);
+    }
+}
+
+/* PREVENTA -  HEADER */
+.continer-main-preventa{
+    margin: 10px 30px 30px;
+
+    h2{
+        font-family: var(--fuente-titulo);
+        text-align: center;
+        font-size: 3rem;
+        color: var(--primary-color);
+        padding-bottom: 80px;
+    }
+
+    .continer-header-preventa{
+        background-image: url('../img/preventa/fondo.svg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        padding: 20px;
+        height: 30vh;
+        border-radius: 10px;
+        position: relative;
+
+        a{
+            position: absolute;
+            left: 10%;
+            top: 65%;
+            transform: translateY(-65%);
+            z-index: 100;
+        }
+        img{
+            height: 16%;
+            width: auto;
+        }
+        h2{
+            font-family: var(--fuente-titulo);
+            font-size: 4rem;
+            color: white;
+            text-align: center;
+            position: relative;
+            top: 50%;
+        }
+    }
+}
+
+/* PREVENTA - CARD X CASA */
+.container-items-preventa {
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    position: relative;
+    z-index: 0;
+}
+
+.item-preventa-card{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 15px;
+    background-color: var(--primary-color);
+    position: relative;
+    z-index: 1;
+}
+
+.preventa-card-fondo {
+    width: 100%;
+    height: 400px;
+    border-radius: 15px;
+    background-image: url('../img/preventa/c1.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2;
+
+    img{
+        width: 95%;
+        height: 110%;
+        object-fit: cover;
+        position: absolute;
+        top: -55px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 3;
+    }
+}
+
+.preventa-card-detalles {
+    height: 50%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    font-size: 1.5rem;
+
+    ul {
+        list-style: none;
+        color: white;
+        text-align: center;
+    }
+
+    li {
+        margin-bottom: 12px;
+    }
+
+    .titulo-card{
+        font-family: var(--fuente-menu);
+    }
+
+    .texto-card{
+        font-family: var(--fuente-detalles);
+    }
+
+    .card-detalles-button {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 8px;
+        width: 20%;
+        background-color: white;
+        color: var(--primary-color);
+        text-decoration: none;
+        text-align: center;
+        border-radius: 12px;
+        align-self: center;
+        font-family: var(--fuente-menu);
+    }
+
+    .card-detalles-button:hover {
+        border: 2px solid var(--secondary-color);
+        color: var(--secondary-color);
     }
 }
 
@@ -2220,6 +2406,18 @@ footer .redes {
     }
 
 
+    /* PAGE - VENTAS */
+    .container-main-preventa{
+        height: 50vh;
+    }
+    
+    .container-preventa{
+        a{
+            padding: 10px 80px;
+        }
+    }
+
+
     /* PAGE - NOSOTROS */
     .container-historia {
         width: 80%;
@@ -2244,7 +2442,6 @@ footer .redes {
     .container-logros {
         justify-content: space-around;
     }
-    
 
     /* PAGE - BLOG */
     .container-main-intro p {
@@ -2409,6 +2606,25 @@ footer .redes {
         padding-bottom: 10%;
     }
 
+     /* PREVENTA -  HEADER */
+    .continer-main-preventa{
+        h2{
+            font-size: 2.75rem;
+        }
+
+        .continer-header-preventa{
+            padding: 10px;
+            height: 25vh;
+            h2{
+                font-size: 3rem;
+            }
+        }
+    }
+
+    .casaAtlixco-img{
+        width: 60%;
+    }
+
 }
 
 @media (max-width: 912px) {
@@ -2488,6 +2704,16 @@ footer .redes {
         }
     }
 
+    .container-main-preventa{
+        height: 30vh;
+    }
+    
+    .container-preventa{
+        a{
+            font-size: 3rem;
+        }
+    }
+
 
     /* PAGE - CASA HABITACIÓN */
     .continer-header-casa {
@@ -2514,6 +2740,28 @@ footer .redes {
             flex: 1;
             hr{
                 margin: 25px 0;
+            }
+        }
+    }
+
+    /* PREVENTA -  HEADER */
+    .continer-main-preventa{
+        h2{
+            font-size: 2rem;
+            padding-bottom: 40px;
+        }
+
+        .continer-header-preventa{
+            padding: 10px;
+            height: 10vh;
+            a{
+                left: 6%;
+            }
+            img{
+                height: 10%;
+            }
+            h2{
+                font-size: 2.25rem;
             }
         }
     }
@@ -3405,16 +3653,53 @@ footer .redes {
         }
     }
 
+    .container-main-preventa{
+        height: 25vh;
+    }
+    
+    .container-preventa{
+        a{
+            padding: 10px 20px;
+            font-size: 1.25rem;
+        }
+    }
+
+    /* PAGE - PREVENTA */
+    .container-items-preventa {
+        padding: 80px 0;
+    }
+
+    .item-preventa-card{
+        max-width: 300px;
+    }
+
+    .preventa-card-fondo {
+        height: 200px;
+
+        img{
+            top: -40px;
+        }
+    }
+
+    .preventa-card-detalles {
+        font-size: 1rem;
+        li {
+            margin-bottom: 8px;
+        }
+    }
+
     /* PAGE - CASA HABITACIÓN */
     .continer-header-casa {
         height: 5vh;
     
         img{
             left: 10%;
-            top: 60%;
+            top: 50%;
+            transform: translateY(50%);
+            width: 30px;
         }
         h2{
-            font-size: 1.25rem;
+            font-size: 1rem;
         }
     }
 
@@ -3450,6 +3735,32 @@ footer .redes {
             }
             .casa-list-uno{
                 padding: 10px 0 15px 0;
+            }
+        }
+    }
+
+    /* PAGE - PREVENTA */
+    .continer-main-preventa{
+        margin: 10px 20px 20px;
+
+        h2{
+            font-size: 1.25rem;
+            padding-bottom: 10px;
+        }
+
+        .continer-header-preventa{
+            padding: 15px;
+            height: 10vh;
+            
+            a{
+                left: 2%;
+            }
+            img{
+                width: 20px;
+            }
+            h2{
+                font-size: 1.75rem;
+                top: 45%;
             }
         }
     }
